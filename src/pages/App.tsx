@@ -4,13 +4,25 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React from 'react';
+import { Component } from 'react';
 import {
   Platform,
   StyleSheet,
+  FlatList,
   Text,
-  View
+  View,
+  NativeModules,
+  ToastAndroid,
 } from 'react-native';
+
+type Props = {
+
+}
+
+type State = {
+
+}
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -19,21 +31,17 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props);
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+        <Text>
+          哈哈哈哈哈哈
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
+      </View >
     );
   }
 }
@@ -44,6 +52,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+  },
+  item: {
+    fontSize: 40,
+    textAlign: 'center',
   },
   welcome: {
     fontSize: 20,
